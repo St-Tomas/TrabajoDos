@@ -64,5 +64,18 @@ ON CONFLICT(Id) DO NOTHING;";
 insertarPersonaPrueba.ExecuteNonQuery();
 Console.WriteLine("-> Persona de prueba ID: 1 insertada.");
 }
+/* para testear usa http://localhost:5266/api/Cuenta/ con el puerto que te de, fijate que el body tiene que ser algo como 
+{
+  "tipo": 1,
+  "saldo": 25000.00,
+  "personaId": 1
+}
+para el POST,
+para modificar con PUT
+{
+  "saldo": 25000.00,
+}
+ahi tenes que pararte en http://localhost:5266/api/Cuenta/X donde X es el id de cuenta que te da el GET, para DELETE la cuenta te paras igual y le mandas sin body
+*/
 
 app.Run();
