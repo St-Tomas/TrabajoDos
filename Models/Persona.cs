@@ -6,4 +6,7 @@ public class Persona
     public string Nombre { get; set; }
     public string Email {get; set;}
     public string Password {get; set;}
+    
+    // Navegación a Cuentas
+    public ICollection<Cuenta> Cuentas { get; set; } = new List<Cuenta>();
 }

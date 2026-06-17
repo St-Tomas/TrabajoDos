@@ -5,4 +5,7 @@ public class Cuenta
     public TipoCuenta Tipo {get; set;}
     public decimal Saldo { get; set; }
     public int PersonaId { get; set; }
+    
+    // Navegación a Persona
+    public Persona? Persona { get; set; }
 }
