@@ -30,7 +30,7 @@ namespace MyControllerApi.Services
 
             var insertCmd = conexion.CreateCommand();
             insertCmd.CommandText = @"
-                INSERT INTO Cuentas (TipoCuenta, Saldo, PersonaId) 
+                INSERT INTO Cuentas (Tipo, Saldo, PersonaId) 
                 VALUES (@Tipo, @Saldo, @PersonaId)";
             
             insertCmd.Parameters.AddWithValue("@Tipo", dto.Tipo.ToString());
@@ -48,7 +48,7 @@ namespace MyControllerApi.Services
             conexion.Open();
 
             var cmd = conexion.CreateCommand();
-            cmd.CommandText = "SELECT Id, TipoCuenta, Saldo, PersonaId FROM Cuentas";
+            cmd.CommandText = "SELECT Id, Tipo, Saldo, PersonaId FROM Cuentas";
 
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -72,7 +72,7 @@ namespace MyControllerApi.Services
             conexion.Open();
 
             var cmd = conexion.CreateCommand();
-            cmd.CommandText = "SELECT Id, TipoCuenta, Saldo, PersonaId FROM Cuentas WHERE Id = @Id";
+            cmd.CommandText = "SELECT Id, Tipo, Saldo, PersonaId FROM Cuentas WHERE Id = @Id";
             cmd.Parameters.AddWithValue("@Id", id);
 
             using var reader = cmd.ExecuteReader();
